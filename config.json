@@ -1,0 +1,21 @@
+{
+  "data_path": "data/janos-us.json",
+  "K": 5,
+  "budget": 1000000,
+  "server_cost": 1000,
+  "module_capacity": 64.0,
+  "module_cost": 1000,
+  "base_capacity": 0.0,
+  "delay_us_per_km": 5.0,
+  "delay_from": "haversine",
+  "demand_scale": 1.0,
+  "links_directed": "auto",
+  "integer_modules": true,
+  "milp_time_limit": 20.0,
+  "k_paths": 3,
+  "n_trials": 200,
+  "seed": 42,
+  "sampling": "systematic",
+  "results_dir": "results",
+  "field_map": {}
+}
