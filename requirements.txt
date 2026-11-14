@@ -4,3 +4,6 @@ networkx>=3.0
 pandas
 matplotlib
 jupyter
+networkx
+casadi
+cvxpy

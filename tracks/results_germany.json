@@ -1,0 +1,93 @@
+{
+  "args": {
+    "file": "../data/germany50.json",
+    "methods": [
+      "c1-socp",
+      "c2-sos2",
+      "c2-ipopt"
+    ],
+    "K": 5,
+    "B": 150000.0,
+    "c_server": 1000.0,
+    "demand_scale": 0.001,
+    "module_gbps": 1.0,
+    "module_cost_per_km": 0.78,
+    "k_paths": 3,
+    "alpha": 10.0,
+    "util_cap": 0.95,
+    "capex_weight": 0.001,
+    "gamma": 0.8,
+    "n_break": 8,
+    "time_limit": 300,
+    "starts": 8,
+    "seed": 0,
+    "solver": null,
+    "mip": false,
+    "out": "results_germany.json"
+  },
+  "results": {
+    "c1-socp": {
+      "method": "SOCP relaxation + top-K + exact refine (refined)",
+      "servers": [
+        "Duesseldorf",
+        "Frankfurt",
+        "Hannover",
+        "Leipzig",
+        "Stuttgart"
+      ],
+      "latency": 2.1022858038619647,
+      "exact_mm1_objective": 31.67377651501922,
+      "modules": 83,
+      "capex": 9759.81,
+      "within_budget": true,
+      "max_util": 0.1399999963682913,
+      "relaxation_value_cone_form": 10.390434967417416,
+      "seconds": 14.8
+    },
+    "c2-sos2": {
+      "method": "SOS2 piecewise-linear MILP (HiGHS)",
+      "servers": [
+        "Duesseldorf",
+        "Frankfurt",
+        "Hannover",
+        "Leipzig",
+        "Muenchen"
+      ],
+      "latency": 2.089437622693977,
+      "capex": 5475.244872868934,
+      "within_budget": true,
+      "bandwidth_needed_gbps": 5.817000000000002,
+      "status": "Optimal",
+      "seconds": 1.4
+    },
+    "c2-ipopt": {
+      "method": "IPOPT multi-start (CasADi)",
+      "servers": [
+        "Duesseldorf",
+        "Frankfurt",
+        "Hannover",
+        "Leipzig",
+        "Muenchen"
+      ],
+      "latency": 2.0894345933875047,
+      "capex": 5475.249635246805,
+      "within_budget": true,
+      "bandwidth_needed_gbps": 5.816991918143039,
+      "relaxed_y_max_fraction_gap": 0.49992565160343155,
+      "starts_run": 8,
+      "starts_solved": 8,
+      "starts_feasible": 8,
+      "latency_per_start": [
+        2.0894,
+        2.0894,
+        2.0894,
+        2.0894,
+        2.0894,
+        2.0894,
+        2.0894,
+        2.0894
+      ],
+      "seconds": 54.4
+    }
+  }
+}
